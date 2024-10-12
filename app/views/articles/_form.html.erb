@@ -27,11 +27,6 @@
   </div>
 
   <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.collection_select :user_id, User.all, :id, :email %>
-  </div>
-
-  <div>
     <%= form.label :available, style: "display: block" %>
     <%= form.check_box :available %>
   </div>

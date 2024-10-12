@@ -2,9 +2,12 @@
 
 <%= render @article %>
 
-<div>
+<%= link_to "Back to articles", articles_path %>
+
+
+
+<% if user_signed_in? && (current_user.id == @article.user_id) %>
   <%= link_to "Edit this article", edit_article_path(@article) %> |
-  <%= link_to "Back to articles", articles_path %>
 
   <%= button_to "Destroy this article", @article, method: :delete %>
-</div>
+<% end %>

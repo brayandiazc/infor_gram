@@ -14,4 +14,8 @@
 class Article < ApplicationRecord
   belongs_to :location
   belongs_to :user
+
+  # validations
+  validates :title, presence: true, uniqueness: true
+  validates :content, presence: true, length: { minimum: 10 }
 end

@@ -23,12 +23,12 @@
 
   <div>
     <%= form.label :location_id, style: "display: block" %>
-    <%= form.text_field :location_id %>
+    <%= form.collection_select :location_id, Location.all, :id, :name %>
   </div>
 
   <div>
     <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+    <%= form.collection_select :user_id, User.all, :id, :email %>
   </div>
 
   <div>

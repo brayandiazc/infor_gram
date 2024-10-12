@@ -1,9 +1,20 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+require 'faker'
+
+# Resetear el generador único para evitar errores si ejecutas varias veces
+Faker::UniqueGenerator.clear
+
+# Crear datos para Location
+10.times do
+  Location.create!(
+    name: Faker::Address.unique.city
+  )
+end
+
+# Crear datos para Category
+10.times do
+  Category.create!(
+    name: Faker::Commerce.unique.department
+  )
+end
+
+puts "Se han creado 10 ubicaciones y 10 categorías ficticias sin repeticiones."

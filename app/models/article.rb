@@ -14,6 +14,8 @@
 class Article < ApplicationRecord
   belongs_to :location
   belongs_to :user
+  has_many :article_categories, dependent: :destroy
+  has_many :categories, through: :article_categories
 
   # validations
   validates :title, presence: true, uniqueness: true

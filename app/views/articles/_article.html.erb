@@ -10,6 +10,13 @@
   </p>
 
   <p>
+    <strong>Categories:</strong>
+    <% article.categories.each do |item| %>
+      <%= content_tag :span, item.name, class: "tag"  %>
+    <% end %>
+  </p>
+
+  <p>
     <strong>Location:</strong>
     <%= article.location.name %>
   </p>

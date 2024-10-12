@@ -1,3 +1,3 @@
-class Category < ApplicationRecord
+class Location < ApplicationRecord
   validates :name, presence: true
 end

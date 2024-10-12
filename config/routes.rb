@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # Static pages
   get "/home",        to: "pages#home"
   get "/legal",       to: "pages#terms"

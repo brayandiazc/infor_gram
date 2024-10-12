@@ -18,6 +18,18 @@
   </head>
 
   <body>
+    <nav>
+      <% if user_signed_in? %>
+        <h1>Welcome Home, <%= current_user.email %></h1>
+        <%= link_to 'Sign out', destroy_user_session_path, data: { turbo_method: :delete } %>
+      <% else %>
+        <h1>Home</h1>
+        <%= link_to 'Sign in', new_user_session_path %>
+        <%= link_to 'Sign up', new_user_registration_path %>
+      <% end %>
+    </nav>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>

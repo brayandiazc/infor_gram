@@ -1,0 +1,12 @@
+es:
+  activerecord:
+    models:
+      article: Publicación
+      articles: Publicaciones
+    attributes:
+      article:
+        title: Título
+        content: Contenido
+        published_at: Publicado el
+        available: Disponible
+        categories: Categorías

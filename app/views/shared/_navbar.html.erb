@@ -1,0 +1,13 @@
+<nav>
+      <%= link_to t('.home'), root_path %>
+      <%= link_to 'Articles', articles_path %>
+      <%= link_to t(".new_article"), new_article_path %>
+      <% if user_signed_in? %>
+        <h1>Welcome Home, <%= current_user.email %></h1>
+        <%= link_to 'Sign out', destroy_user_session_path, data: { turbo_method: :delete } %>
+      <% else %>
+        <h1>Home</h1>
+        <%= link_to 'Sign in', new_user_session_path %>
+        <%= link_to 'Sign up', new_user_registration_path %>
+      <% end %>
+    </nav>
